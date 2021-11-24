@@ -1,5 +1,9 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const employee = require("./lib/Employee");
+const engineer = require("./lib/Engineer");
+const intern = require("./lib/Intern");
+const manager = require("./lib/Manager");
 
 // build a Node.js command-line application that takes in information about employees on a software engineering team, 
 // then generates an HTML webpage that displays summaries for each person
@@ -32,5 +36,7 @@ const fs = require("fs");
 
 // WHEN I decide to finish building my team
 // THEN I exit the application, and the HTML is generated
+inquirer.prompt([
 
+]);
 
