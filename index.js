@@ -36,7 +36,87 @@ const manager = require("./lib/Manager");
 
 // WHEN I decide to finish building my team
 // THEN I exit the application, and the HTML is generated
-inquirer.prompt([
 
-]);
+const createEmployee = () => {
+    inquirer.prompt([
+
+        {
+            type: 'name',
+            message: 'Enter the employee name: \n\n',
+            name: 'title'
+        },
+    
+        {
+            type: 'number',
+            message: 'Enter the employee ID: \n\n',
+            name: 'ID'
+        },
+
+        {
+            type: 'input',
+            message: 'Enter the employee email: \n\n',
+            name: 'email'
+        },
+
+        
+
+        // if user selected engineer, allow user to enter username
+        // else if user selected intern, allow user to enter school
+        // user has option to either add another employee or create HTML based off selections
+        {
+            type: 'list',
+            message: 'Select which you are adding\n\n',
+            choices: ['Manager', 'Engineer', 'Intern'],
+            name: 'selection'
+        }
+
+    // generate specific question based off user selection
+    ]).then(response => {
+        inquirer.prompt([
+            {
+                when: () => response.selection === "Manager",
+                type: 'number',
+                message: 'Enter the employee office number\n\n',
+                name: 'officeNumber'
+            },
+
+            {
+                when: () => response.selection === "Engineer",
+                type: 'input',
+                message: 'Enter the github username\n\n',
+                name: 'github'
+            },
+
+            {
+                when: () => response.selection === "Intern",
+                type: 'input',
+                message: 'Enter the school name\n\n',
+                name: 'school'
+            },
+
+
+            {
+                type:'input',
+                message: 'Enter Y/y to add another employee or N/n to exit and create the document!\n\n',
+                name: 'addEmployee'
+            },
+        ])
+        // if user selects yes, rerun the generatEmployee function
+        // else, user is done and generate HTML
+        .then((results) => {
+            if (results.addEmployee === "Y" || results.addEmployee === "y") {
+                createEmployee();
+            }
+            else {
+                console.log("NAY!");
+                return true;
+            }
+        })
+    .catch((error) => (console.log(error)));
+    })
+}
+
+createEmployee();
+
+
 
