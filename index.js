@@ -37,6 +37,11 @@ const manager = require("./lib/Manager");
 // WHEN I decide to finish building my team
 // THEN I exit the application, and the HTML is generated
 
+// ------------------------------------------------------------------------------------------------------- //
+
+//database to store all employees
+const allEmployees = [];
+
 const createEmployee = () => {
     inquirer.prompt([
 
@@ -102,14 +107,32 @@ const createEmployee = () => {
             },
         ])
         // if user selects yes, rerun the generatEmployee function
-        // else, user is done and generate HTML
         .then((results) => {
+
             if (results.addEmployee === "Y" || results.addEmployee === "y") {
+        // remove add employee key from 'results' object as this info is not needed to add to HTML
+                delete results["addEmployee"];
+        // take each item in results and add to response object
+        //NOTE: response contains the answers user inputted AND
+        //results contains user inputs based off specific selection of either manager,engineer or intern
+        //the purpose of this is to combine into one object to include either officenumber, github or school name
+                for (item in results) {
+                    response[item] = results[item];
+                }
+
+        // push all the responses the user inputted in the all employees array
+                
+                allEmployees.push(response);
+                console.log("***ALL EMPLOYEES*****", allEmployees);
                 createEmployee();
             }
+            
             else {
-                console.log("NAY!");
+                console.log("***EMPLOYEES LIST*****", allEmployees);
+
                 return true;
+        // if user is done, do the following steps
+        //         
             }
         })
     .catch((error) => (console.log(error)));
