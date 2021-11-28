@@ -63,11 +63,9 @@ const createEmployee = () => {
             name: 'email'
         },
 
-        
-
-        // if user selected engineer, allow user to enter username
-        // else if user selected intern, allow user to enter school
-        // user has option to either add another employee or create HTML based off selections
+// if user selected engineer, allow user to enter username
+// else if user selected intern, allow user to enter school
+// user has option to either add another employee or create HTML based off selections
         {
             type: 'list',
             message: 'Select which you are adding\n\n',
@@ -75,7 +73,7 @@ const createEmployee = () => {
             name: 'selection'
         }
 
-    // generate specific question based off user selection
+// generate specific question based off user selection
     ]).then(response => {
         inquirer.prompt([
             {
@@ -99,41 +97,59 @@ const createEmployee = () => {
                 name: 'school'
             },
 
-
+// generate specific question based off user selection
             {
                 type:'input',
                 message: 'Enter Y/y to add another employee or N/n to exit and create the document!\n\n',
                 name: 'addEmployee'
             },
         ])
-        // if user selects yes, rerun the generatEmployee function
+
+        
         .then((results) => {
 
+    //***** if user selects yes, allow user to add another employee while adding previously created employees*****// 
             if (results.addEmployee === "Y" || results.addEmployee === "y") {
-        // remove add employee key from 'results' object as this info is not needed to add to HTML
+
+    // remove add employee key from 'results' object as this info is not needed to add to HTML
                 delete results["addEmployee"];
-        // take each item in results and add to response object
-        //NOTE: response contains the answers user inputted AND
-        //results contains user inputs based off specific selection of either manager,engineer or intern
-        //the purpose of this is to combine into one object to include either officenumber, github or school name
+
+    // take each item in results and add to response object
+    //NOTE: response contains the answers user inputted AND
+    //results contains user inputs based off specific selection of either manager,engineer or intern
+    //the purpose of this is to combine into one object to include either officenumber, github or school name options
+    //based off if user selected either engineer, manager, or intern
                 for (item in results) {
                     response[item] = results[item];
                 }
 
-        // push all the responses the user inputted in the all employees array
+    // push all the responses the user inputted in the all employees array
                 
                 allEmployees.push(response);
-                console.log("***ALL EMPLOYEES*****", allEmployees);
                 createEmployee();
             }
-            
-            else {
-                console.log("***EMPLOYEES LIST*****", allEmployees);
 
-                return true;
-        // if user is done, do the following steps
-        //         
-            }
+    //***** if user selects no and does not want to add anymore employees do the following *****//
+    //***** do for each on each employee in allEmployees database and add to corresponding class (Engineer,Manager,or Intern) based of selection key  */ 
+    //***** run the generateHTML function based off   */
+            else {
+
+    // remove add employee key from 'results' object as this info is not needed to add to HTML
+                delete results["addEmployee"];
+
+    // take each item in results and add to response object
+    //NOTE: response contains the answers user inputted AND
+    //results contains user inputs based off specific selection of either manager,engineer or intern
+    //the purpose of this is to combine into one object to include either officenumber, github or school name
+                for (item in results) {
+                    response[item] = results[item];
+                }
+
+    // push all the responses the user inputted in the all employees array 
+                allEmployees.push(response);
+                console.log("***ALL EMPLOYEES*****", allEmployees);
+        
+        }
         })
     .catch((error) => (console.log(error)));
     })
