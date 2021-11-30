@@ -32,4 +32,4 @@ If the user selects yes, the profile-generator program will restart and allow th
 
 If the user selected no, an HTML document is auto-generated containing the create employees with corresponding information per screenshot below:
 
-![alt-text](./assets/images/main-screen-4.JPG "main-page-4")
+![alt-text](./assets/images/main-screen-4.JPG "main-webpage-4")
