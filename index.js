@@ -96,15 +96,15 @@ const createEmployee = () => {
 // push all the responses the user inputted in the all employees array
             allEmployees.push(newEmployee);
 
-    //***** if user selects yes, allow user to add another employee while adding previously selected employees*****// 
+//***** if user selects yes, allow user to add another employee while adding previously selected employees*****// 
             if (results.addEmployee === "Y" || results.addEmployee === "y") {
                 createEmployee();
             }
 
-    //***** if user selects no and does not want to add anymore employees do the following *****//
-    //***** use .map to grab each created employee from allEmployees database and create its own card element  */
+//***** if user selects no and does not want to add anymore employees do the following *****//
+//***** use .map to grab each created employee from allEmployees database and create its own card element  */
             else {
-    // create a template to take employees from allEmployees database and add to our custon HTML
+// create a template to take employees from allEmployees database and add to our custon HTML
                 const templateHTML = `
                 <!DOCTYPE html>
                 <html>
@@ -129,7 +129,7 @@ const createEmployee = () => {
                             </br>
                             <div class="columns is-multiline">
                                 ${allEmployees.map(value => {
-                                    // take each value in allEmployees and map to card element
+// take each value in allEmployees and map to card element
                                     return `
                                     <div class="d-flex justify-content-center section">
                                         <div class="rounded col-lg-6 col-md-6 col-sm-12 p-2 card">
@@ -163,7 +163,7 @@ const createEmployee = () => {
                   </body>
                 </html>
                 `
-            // fs writefile with that templatehtml to an empty index.html
+// fs writefile with that templatehtml to an empty index.html
             fs.writeFileSync("index.html", templateHTML);
             }
         })
