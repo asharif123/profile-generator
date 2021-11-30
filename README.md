@@ -34,6 +34,3 @@ If the user selected no, an HTML document is auto-generated containing the creat
 
 ![alt-text](./assets/images/main-screen-4.JPG "main-webpage-4")
 
-![alt-text](./assets/images/main-screen-5.JPG "main-webpage-5")
-
-![alt-text](./assets/images/main-screen-6.JPG "main-webpage-6")
