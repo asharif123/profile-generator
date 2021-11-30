@@ -30,6 +30,10 @@ If the user selects yes, the profile-generator program will restart and allow th
 
 ![alt-text](./assets/images/main-screen-3.JPG "main-page-3")
 
-If the user selected no, an HTML document is auto-generated containing the create employees with corresponding information per screenshot below:
+If the user selected no, an HTML document is auto-generated containing the create employees with corresponding information per screenshots below containing 3 employees that were created:
 
 ![alt-text](./assets/images/main-screen-4.JPG "main-webpage-4")
+
+![alt-text](./assets/images/main-screen-5.JPG "main-webpage-5")
+
+![alt-text](./assets/images/main-screen-6.JPG "main-webpage-6")
