@@ -78,17 +78,14 @@ const createEmployee = () => {
             switch (response.selection) {
                 case "Manager":
                     newEmployee = new Manager(response.title,response.ID,response.email,results.officeNumber);
-                    console.log("NEW EMPLOYEE", newEmployee.getRole());
                     break;
 
                 case "Engineer":
                     newEmployee = new Engineer(response.title,response.ID,response.email,results.github);
-                    console.log("NEW ROLE", newEmployee.getRole());
                     break;
 
                 case "Intern":
                     newEmployee = new Intern(response.title,response.ID,response.email,results.school);
-                    console.log("NEW ROLE", newEmployee.getRole());
                     break;
             
                 default:
