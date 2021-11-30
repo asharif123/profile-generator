@@ -97,8 +97,6 @@ const createEmployee = () => {
             
 // push all the responses the user inputted in the all employees array
             allEmployees.push(newEmployee);
-// call the createEmployee() function to allow user to add more employees
-            // console.log("ALL EMPLOYEES", allEmployees);
 
     //***** if user selects yes, allow user to add another employee while adding previously selected employees*****// 
             if (results.addEmployee === "Y" || results.addEmployee === "y") {
@@ -108,7 +106,7 @@ const createEmployee = () => {
     //***** if user selects no and does not want to add anymore employees do the following *****//
     //***** add all the created employees to the allEmployee database */
     //***** do for each method on each employee in allEmployees database and add to corresponding class (Engineer,Manager,or Intern) based of selection key  */ 
-    //***** run the generateHTML function based off   */
+    //***** run the templateHTML function based off   */
             else {
     // create a template to take employees from allEmployees database and add to our custon HTML
                 const templateHTML = `
@@ -136,7 +134,6 @@ const createEmployee = () => {
                             <div class="columns is-multiline">
                                 ${allEmployees.map(value => {
                                     // take each value in allEmployees and map to card element
-                                    console.log("VALUE ROLE", value.getRole())
                                     return `
                                     <div class="d-flex justify-content-center section">
                                         <div class="rounded col-lg-6 col-md-6 col-sm-12 p-2 card">
