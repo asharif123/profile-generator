@@ -65,16 +65,16 @@ const createEmployee = () => {
 // generate specific question based off user selection
             {
                 type:'input',
-                message: 'Enter Y/y to add another employee or N/n to exit and create the document!\n\n',
+                message: 'Enter Y/y to add another employee or N/n to exit and create your employee database!\n\n',
                 name: 'addEmployee'
             },
         ])
 
         
         .then((results) => {
-            // variable to store each employee we create in new class
+// variable to store each employee we create in new class
             let newEmployee;
-            // create new employee that user initially created regardless if user wants to create new employees or not
+// create new employee that user initially created regardless if user wants to create additional employees or not
             switch (response.selection) {
                 case "Manager":
                     newEmployee = new Manager(response.title,response.ID,response.email,results.officeNumber);
@@ -101,9 +101,7 @@ const createEmployee = () => {
             }
 
     //***** if user selects no and does not want to add anymore employees do the following *****//
-    //***** add all the created employees to the allEmployee database */
-    //***** do for each method on each employee in allEmployees database and add to corresponding class (Engineer,Manager,or Intern) based of selection key  */ 
-    //***** run the templateHTML function based off   */
+    //***** use .map to grab each created employee from allEmployees database and create its own card element  */
             else {
     // create a template to take employees from allEmployees database and add to our custon HTML
                 const templateHTML = `
@@ -164,7 +162,7 @@ const createEmployee = () => {
                   </body>
                 </html>
                 `
-            // fs writefile with that html as index.html
+            // fs writefile with that templatehtml to an empty index.html
             fs.writeFileSync("index.html", templateHTML);
             }
         })
