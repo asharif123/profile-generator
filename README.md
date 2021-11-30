@@ -10,7 +10,7 @@ Javascript was used to pull the Jest and Inquirer libraries in order to both exe
 
 # Demo of Project
 
-![screen-recorder-tue-nov-30-2021-00-27-20](.assets/images/screen-recorder-tue-nov-30-2021-00-27-20.gif)
+![screen-recorder-tue-nov-30-2021-00-27-20](./assets/images/screen-recorder-tue-nov-30-2021-00-27-20.gif)
 
 # Screenshots
 
