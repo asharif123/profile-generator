@@ -1,0 +1,42 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.section {
+    background-color: rgb(49, 48, 46);
+}
+
+.title {
+    background-color: rgb(228, 51, 38);
+    color: rgb(228, 213, 213);
+    padding: 5%;
+    text-align: center;
+}
+
+.card {
+    color: rgb(228, 213, 213);
+}
+
+.card h3, .card h6 {
+    margin-bottom: 5%;
+}
+
+.card-content {
+    padding: 5%;
+    text-align: center;
+    background-color: rgb(63, 66, 63);
+}
+
+p, .github{
+    background-color: rgb(128, 123, 124);
+    padding: 5%;
+}
+
+/* RESPONSIVENESS */
+
+@media (max-width: 300px) {
+    .title {
+        font-size: 150%;
+    }
+}
+
