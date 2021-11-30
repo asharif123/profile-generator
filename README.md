@@ -19,3 +19,9 @@ After entering the email, the user will then select the employee type (Engineer,
 For example, if user selected "Engineer", the next question prompt will ask user for their github username or if user selected "Manager", user will be prompted to enter office number.
 
 ![alt-text](./assets/images/main-screen-2.JPG "main-page")
+
+Once the user has entered the employee information, the user will be asked to either create another employee or create the employee database.
+
+If the user selects yes, the profile-generator program will restart and allow the user to add more employees.
+
+![alt-text](./assets/images/main-screen-3.JPG "main-page")
