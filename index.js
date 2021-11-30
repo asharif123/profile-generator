@@ -40,8 +40,6 @@ const createEmployee = () => {
 
 // generate specific question based off above user selection
     ]).then(response => {
-        role = response.selection
-        basicData = response
         inquirer.prompt([
             {
                 when: () => response.selection === "Manager",
@@ -76,9 +74,10 @@ const createEmployee = () => {
         .then((results) => {
             // variable to store each employee we create in new class
             let newEmployee;
+            // create new employee that user initially created regardless if user wants to create new employees or not
             switch (response.selection) {
                 case "Manager":
-                    newEmployee = new Manager(response.title,response.ID,response.email,response.officeNumber);
+                    newEmployee = new Manager(response.title,response.ID,response.email,results.officeNumber);
                     console.log("NEW EMPLOYEE", newEmployee.getRole());
                     break;
 
@@ -123,7 +122,9 @@ const createEmployee = () => {
                     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
                     <link rel="preconnect" href="https://fonts.googleapis.com">
                     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-                    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Lato:ital,wght@1,700&family=Montserrat&family=Open+Sans:wght@500&family=Roboto:wght@500&display=swap" rel="stylesheet">                  </head>
+                    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Lato:ital,wght@1,700&family=Montserrat&family=Open+Sans:wght@500&family=Roboto:wght@500&display=swap" rel="stylesheet">
+                    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">                  
+                  </head>
                   <body>
                     <section class="section">
                         <div class="container">
