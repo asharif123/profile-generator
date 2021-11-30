@@ -8,10 +8,6 @@ const Manager = require("./lib/Manager");
 const allEmployees = [];
 
 const createEmployee = () => {
-// used to store if user selected either Manager, Engineer or Intern
-    let role = ''
-// used to store the input responses made by user so that we can create our corresponding classes
-    let basicData;
     inquirer.prompt([
 
         {
@@ -82,7 +78,7 @@ const createEmployee = () => {
             let newEmployee;
             switch (response.selection) {
                 case "Manager":
-                    newEmployee = new Manager(basicData.title,basicData.ID,basicData.email,results.officeNumber);
+                    newEmployee = new Manager(response.title,response.ID,response.email,response.officeNumber);
                     console.log("NEW EMPLOYEE", newEmployee.getRole());
                     break;
 
