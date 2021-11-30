@@ -39,6 +39,7 @@ const createEmployee = () => {
         }
 
 // generate specific question based off above user selection
+// note: when is equivalent to if statement for inquirer
     ]).then(response => {
         inquirer.prompt([
             {
