@@ -8,7 +8,9 @@ This was created using HTML, CSS, Bootstrap and Javascript.
 
 Javascript was used to pull the Jest and Inquirer libraries in order to both execute test to ensure user has properly created the Employee, Intern, Engineer and Manager classes and also using Inquirer to take user input where the employee database is created based off inquirer user input.
 
-Here are the screenshots:
+# Demo of Project
+
+# Screenshots
 
 The user will be prompted to enter the employee name, ID and email when node index.js is executed
 
