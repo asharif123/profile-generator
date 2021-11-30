@@ -10,3 +10,4 @@ Javascript was used to pull the Jest and Inquirer libraries in order to both exe
 
 Here are the screenshots:
 
+![alt-text](./assets/images/main-screen.JPG "main-page")
