@@ -10,4 +10,12 @@ Javascript was used to pull the Jest and Inquirer libraries in order to both exe
 
 Here are the screenshots:
 
+The user will be prompted to enter the employee name, ID and email when node index.js is executed
+
 ![alt-text](./assets/images/main-screen.JPG "main-page")
+
+After entering the email, the user will then select the employee type (Engineer, Manager, or Intern) and specific questions will be generated depending on selection type.
+
+For example, if user selected "Engineer", the next question prompt will ask user for their github username or if user selected "Manager", user will be prompted to enter office number.
+
+![alt-text](./assets/images/main-screen-2.JPG "main-page")
