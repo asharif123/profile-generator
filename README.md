@@ -10,6 +10,8 @@ Javascript was used to pull the Jest and Inquirer libraries in order to both exe
 
 # Demo of Project
 
+The following video demos functionality on how to run the tests to ensure that the Employee/Engineer/Intern/Manager classes are create properly and also on how to run the profile-generator program.
+
 ![screen-recorder-tue-nov-30-2021-17-09-46](./assets/images/screen-recorder-tue-nov-30-2021-17-09-46.gif)
 
 # Screenshots
